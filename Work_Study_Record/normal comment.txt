@@ -1,0 +1,21 @@
+
+Compile ALDK
+Get the ADLK source files from server
+git clone git://10.118.81.197/aldk_2014
+Make a link to the project Makefile for the project
+cd aldk_2014; ln -s configs/[vendor]/[project]/default.mk ./default.mk
+Start to compile
+make
+Note: Keep in mind the following rules. Or they will remove your modifications and re-extract the dhcp package.
+1.Do not modify package/dhcp/Makefile with your own modification.
+2.Do not execute make package/dhcp/clean with your own modifcation.
+3.Do not update/touch build/dl/dhcp-x.y.z.tgz with your own modification.
+Firmware Upgrade
+Get the newest built Firmware file
+1.cd build/bin/brcm63xx;(GG9016RWAC22-TC_nand_cferom_fs_image_128_ubi.w is the Firmware that we need)
+2.download the Firmware file to local computer via FTP Server.
+Upgrade the Firmware
+1.login the router by web.
+2.find the menu "Extras-->Administration-->Firmware Upgrade".
+3.select the Firmware File "GG9016RWAC22-TC_nand_cferom_fs_image_128_ubi.w",and begin upgrade.
+4.and then ,just wait.

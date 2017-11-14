@@ -1,0 +1,4 @@
+1.Be familiar with ALDK build environment.?(compile aldk and firmware upgrade)
+   2.Have deeper understanding ALDK and Arcadyan-utility.?(be familiar with the aldk layout)
+   3.Understand system applications booting steps.?(system booting steps and application booting steps)
+   4.Master daily development tools and trac system.? (daily usage

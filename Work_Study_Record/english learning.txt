@@ -1,0 +1,21 @@
+1.attachment 附件
+2.customize 定制
+3.general 生成
+4.trunk 主干
+5.affect 影响
+6.divide 划分
+7.implement 执行
+8.invoke 调用
+9.software architecture 软件架构
+10.uniform 统一的
+11.massive 大量的
+12.parse   解析
+13.indicate表示
+14.consideration 考虑
+15.diversity多样性
+16.preclude妨碍
+17.assign指定
+18.scarce缺乏的
+19.specification 说明
+20.extension延长
+21.obsolete废弃，淘汰

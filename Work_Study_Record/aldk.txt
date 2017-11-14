@@ -1,0 +1,6 @@
+git clone://10.118.81.197/aldk_2014
+cd aldk_2014
+ln -s configs/cht/GG9016RWAC22-TC/default.mk ./default
+make
+
+

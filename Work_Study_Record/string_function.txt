@@ -1,0 +1,14 @@
+1.int strncasecmp(const char *s1, const char *s2, size_t n)
+函数说明：strncasecmp()用来比较参数s1和s2字符串前n个字符，比较时会自动忽略大小写的差异。
+返回值 ：若参数s1和s2字符串相同，则返回0；若s1大于s2，则返回大于0的值；若s1小于s2，则返回小于0的值。
+
+2.char *strchr(char* _Str,char _Ch)
+功能：查找字符串_Str中首次出现字符_Val的位置
+说明：返回首次出现_Val的位置的指针，返回的地址是被查找字符串指针开始的第一个与Val相同字符的指针，如果Str中不存在Val则返回NULL。
+
+
+
+3.strstr(str1,str2) 
+函数用于判断字符串str2是否是str1的子串。如果是，则该函数返回str2在str1中首次出现的地址；否则，返回NULL 
+
+

@@ -1,0 +1,10 @@
+1.How to understand RIB?   --closed
+2.路由器各接口名称含义 f0/f1/    网络接口--closed
+3.what is MNG?mngcli?
+4.How messages are delivered？ 
+5.what is action？ mng_cli action ?  mng_cli doset ? mng_cli doget?
+
+6.mapi_ccfg_get_str() mapi_ccfg_set_str() 获取系统全局变量？
+  
+
+
