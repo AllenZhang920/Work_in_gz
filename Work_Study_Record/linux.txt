@@ -1,0 +1,42 @@
+
+FTP Server
+
+1.Install vsftpd
+	a.新建目录/home/uftp作为用户主目录: mkdir /home/uftp	
+	b.新建用户uftp，制定用户主目录和所用shell，并设置密码
+  	useradd -d /home/uftp -s /bin/bash uftp
+	c.passwd uftp
+
+	d.apt-get install vsftpd
+	e.设置属性值vi /etc/vsftpd.conf
+	anonymous_enable=NO #禁止匿名访问 
+	local_enable=YES 
+	write_enable =YES #开启写权限
+	f.service vsftpd start
+
+2.Remove vsftpd
+	a.apt-get remove --pure vsftpd
+
+3.Ftp operation
+	a.在shell登陆ftp后，终端本地的目录可以lcd来切换
+
+
+Git Server
+1.Install git
+	a.apt-get install git
+
+
+
+
+Problem
+1.在使用apt-get安装软件时如果出现
+E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
+解决方案：
+其实这是因为有另外一个程序在运行，导致锁不可用。原因可能是上次运行更新或安装没有正常完成。解决办法是杀死此进程
+sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock
+但是这样不能解决问题：可能还会出现问题，解决方案：
+a,sudo dpkg --configure -a
+b,sudo apt-get update
+
