@@ -3,5 +3,5 @@ sudo passwd;type current user password;type new password for root,type again;
 2.
 
 
-a.°²×°git·şÎñÆ÷,sudo apt-get install git
+a.å®‰è£…gitæœåŠ¡å™¨,sudo apt-get install git
 b.

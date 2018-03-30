@@ -1,12 +1,12 @@
-1.  Ö¸Áî¸ñÊ½£º
+1.  æŒ‡ä»¤æ ¼å¼ï¼š
     target... : prerequisites ...
      command
-ÕâÊÇÒ»¸öÎÄ¼þµÄÒÀÀµ¹ØÏµ£¬Ò²¾ÍÊÇËµ£¬targetÕâÒ»¸ö»ò¶à¸öµÄÄ¿±êÎÄ¼þÒÀÀµÓÚprerequisitesÖÐµÄÎÄ¼þ£¬
-ÆäÉú³É¹æÔò¶¨ÒåÔÚcommandÖÐ¡£Ëµ°×Ò»µã¾ÍÊÇËµ£¬prerequisitesÖÐÈç¹ûÓÐÒ»¸öÒÔÉÏµÄÎÄ¼þ±ÈtargetÎÄ¼þ
-ÒªÐÂµÄ»°£¬commandËù¶¨ÒåµÄÃüÁî¾Í»á±»Ö´ÐÐ¡£Õâ¾ÍÊÇMakefileµÄ¹æÔò¡£Ò²¾ÍÊÇMakefileÖÐ×îºËÐÄµÄÄÚÈÝ¡£
+è¿™æ˜¯ä¸€ä¸ªæ–‡ä»¶çš„ä¾èµ–å…³ç³»ï¼Œä¹Ÿå°±æ˜¯è¯´ï¼Œtargetè¿™ä¸€ä¸ªæˆ–å¤šä¸ªçš„ç›®æ ‡æ–‡ä»¶ä¾èµ–äºŽprerequisitesä¸­çš„æ–‡ä»¶ï¼Œ
+å…¶ç”Ÿæˆè§„åˆ™å®šä¹‰åœ¨commandä¸­ã€‚è¯´ç™½ä¸€ç‚¹å°±æ˜¯è¯´ï¼Œprerequisitesä¸­å¦‚æžœæœ‰ä¸€ä¸ªä»¥ä¸Šçš„æ–‡ä»¶æ¯”targetæ–‡ä»¶
+è¦æ–°çš„è¯ï¼Œcommandæ‰€å®šä¹‰çš„å‘½ä»¤å°±ä¼šè¢«æ‰§è¡Œã€‚è¿™å°±æ˜¯Makefileçš„è§„åˆ™ã€‚ä¹Ÿå°±æ˜¯Makefileä¸­æœ€æ ¸å¿ƒçš„å†…å®¹ã€‚
 
-2.  Ö±½Ómake£¬»áÕÒµ½µÚÒ»¸öÄ¿±êÎÄ¼þ
-3.  make clean£ºcleanÊÇÒ»¸ö±êÇ©
-4.  :=Óë=Çø±ð
-ÓÃ :=£¬±íÊ¾±äÁ¿¸³ÖµµÄÊ±ºòÁ¢¿ÌÕ¹¿ª¡£
-ÓÃ =£¬±íÊ¾±äÁ¿±»ÓÃµÄÊ±ºò²ÅÕ¹¿ª¡£
+2.  ç›´æŽ¥makeï¼Œä¼šæ‰¾åˆ°ç¬¬ä¸€ä¸ªç›®æ ‡æ–‡ä»¶
+3.  make cleanï¼šcleanæ˜¯ä¸€ä¸ªæ ‡ç­¾
+4.  :=ä¸Ž=åŒºåˆ«
+ç”¨ :=ï¼Œè¡¨ç¤ºå˜é‡èµ‹å€¼çš„æ—¶å€™ç«‹åˆ»å±•å¼€ã€‚
+ç”¨ =ï¼Œè¡¨ç¤ºå˜é‡è¢«ç”¨çš„æ—¶å€™æ‰å±•å¼€ã€‚

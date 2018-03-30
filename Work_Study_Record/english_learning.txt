@@ -1,21 +1,21 @@
-1.attachment ¸½¼ş
-2.customize ¶¨ÖÆ
-3.general Éú³É
-4.trunk Ö÷¸É
-5.affect Ó°Ïì
-6.divide »®·Ö
-7.implement Ö´ĞĞ
-8.invoke µ÷ÓÃ
-9.software architecture Èí¼ş¼Ü¹¹
-10.uniform Í³Ò»µÄ
-11.massive ´óÁ¿µÄ
-12.parse   ½âÎö
-13.indicate±íÊ¾
-14.consideration ¿¼ÂÇ
-15.diversity¶àÑùĞÔ
-16.preclude·Á°­
-17.assignÖ¸¶¨
-18.scarceÈ±·¦µÄ
-19.specification ËµÃ÷
-20.extensionÑÓ³¤
-21.obsolete·ÏÆú£¬ÌÔÌ­
+1.attachment é™„ä»¶
+2.customize å®šåˆ¶
+3.general ç”Ÿæˆ
+4.trunk ä¸»å¹²
+5.affect å½±å“
+6.divide åˆ’åˆ†
+7.implement æ‰§è¡Œ
+8.invoke è°ƒç”¨
+9.software architecture è½¯ä»¶æ¶æ„
+10.uniform ç»Ÿä¸€çš„
+11.massive å¤§é‡çš„
+12.parse   è§£æ
+13.indicateè¡¨ç¤º
+14.consideration è€ƒè™‘
+15.diversityå¤šæ ·æ€§
+16.precludeå¦¨ç¢
+17.assignæŒ‡å®š
+18.scarceç¼ºä¹çš„
+19.specification è¯´æ˜
+20.extensionå»¶é•¿
+21.obsoleteåºŸå¼ƒï¼Œæ·˜æ±°

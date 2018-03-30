@@ -1,10 +1,10 @@
 1.How to understand RIB?   --closed
-2.Â·ÓÉÆ÷¸÷½Ó¿ÚÃû³Æº¬Òå f0/f1/    ÍøÂç½Ó¿Ú--closed
+2.è·¯ç”±å™¨å„æ¥å£åç§°å«ä¹‰ f0/f1/    ç½‘ç»œæ¥å£--closed
 3.what is MNG?mngcli?
-4.How messages are delivered£¿ 
-5.what is action£¿ mng_cli action ?  mng_cli doset ? mng_cli doget?
+4.How messages are deliveredï¼Ÿ 
+5.what is actionï¼Ÿ mng_cli action ?  mng_cli doset ? mng_cli doget?
 
-6.mapi_ccfg_get_str() mapi_ccfg_set_str() »ñÈ¡ÏµÍ³È«¾Ö±äÁ¿£¿
+6.mapi_ccfg_get_str() mapi_ccfg_set_str() è·å–ç³»ç»Ÿå…¨å±€å˜é‡ï¼Ÿ
   
 
 

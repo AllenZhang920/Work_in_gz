@@ -1,35 +1,35 @@
-1.Á´½ÓprojectµÄmk£¬mkÖ÷Òª¸³ÖµÏà¹ØprojectµÄ±äÁ¿
-2.cleanÖ®Ç°µÄÁ´½ÓºÍpre-patchedµÄpatch
+1.é“¾æ¥projectçš„mkï¼Œmkä¸»è¦èµ‹å€¼ç›¸å…³projectçš„å˜é‡
+2.cleanä¹‹å‰çš„é“¾æ¥å’Œpre-patchedçš„patch
 3.setup dir :/home/allen_zhang/testaldk/aldk_2014/build,tmp,gpl
-4.ÏÂÔØ¸üĞÂ/home/allen_zhang/testaldk/aldk_2014/openwrt
-  ÏÂÔØ¸üĞÂ/home/allen_zhang/testaldk/aldk_2014/openwrt/target/linux/brcm63xx 
-  ÏÂÔØ¸üĞÂĞÂ/home/allen_zhang/testaldk/aldk_2014/feeds
-5.¿½±´openwrtµ½buildÄ¿Â¼ÏÂ  £ºcp -af /home/allen_zhang/testaldk/aldk_2014/openwrt/* /home/allen_zhang/testaldk/aldk_2014/build/
-6.µ÷ÓÃscripts/download-sources.sh´Óftp://10.118.81.196/pub/sources°Ñ/home/allen_zhang/testaldk/aldk_2014/configs/cht/GG9016RWAC22-TC/openwrt-download-list.txtÁĞ±íÉÏµÄ°üÏÂÔØµ½downloadÎÄ¼ş¼ĞÀï
-7.ÏÂÔØarcadyan-utility°üµ½download/arcadyan-utility-0.5 
-8.Symbol link packages(symbol-link.sh),½«feedsÄ¿Â¼ÏÂµÄ°üÁ´½Óµ½build/package/ÏÂ
-9.symbol-link-dl-openwrt.sh£¬½«aldk_2014/download/ÏÂµÄ°üÁ´½Óµ½build/dl
-10.É¾³ıbuild/tmp£»
-   ´´½¨build/extern£¬build/extern/linux£¬build/extern/toolchain£¬build/extern/tools¡£
-11.´´½¨/extern/patches/£¬²¢¿½±´vendorÏÂµÄpatchµ½¸ÃÄ¿Â¼
-12.customize-openwrt.sh build cht/GG9016RWAC22-TC/customize-openwrt-cht-GG9016RWAC22-TC.sh£¨×îÖÕÊÇGG9016RWAC22-TC.sh build£©
-13.½«Ïà¹ØprojectµÄconfigÎÄ¼ş¿½±´ÖÁbuildÄ¿Â¼ÏÂµÄconfigºÍtoolÏÂ
-14.Ö´ĞĞquick-build£ºcdµ½buildÄ¿Â¼ÏÂ½øĞĞmake²Ù×÷
+4.ä¸‹è½½æ›´æ–°/home/allen_zhang/testaldk/aldk_2014/openwrt
+  ä¸‹è½½æ›´æ–°/home/allen_zhang/testaldk/aldk_2014/openwrt/target/linux/brcm63xx 
+  ä¸‹è½½æ›´æ–°æ–°/home/allen_zhang/testaldk/aldk_2014/feeds
+5.æ‹·è´openwrtåˆ°buildç›®å½•ä¸‹  ï¼šcp -af /home/allen_zhang/testaldk/aldk_2014/openwrt/* /home/allen_zhang/testaldk/aldk_2014/build/
+6.è°ƒç”¨scripts/download-sources.shä»ftp://10.118.81.196/pub/sourcesæŠŠ/home/allen_zhang/testaldk/aldk_2014/configs/cht/GG9016RWAC22-TC/openwrt-download-list.txtåˆ—è¡¨ä¸Šçš„åŒ…ä¸‹è½½åˆ°downloadæ–‡ä»¶å¤¹é‡Œ
+7.ä¸‹è½½arcadyan-utilityåŒ…åˆ°download/arcadyan-utility-0.5 
+8.Symbol link packages(symbol-link.sh),å°†feedsç›®å½•ä¸‹çš„åŒ…é“¾æ¥åˆ°build/package/ä¸‹
+9.symbol-link-dl-openwrt.shï¼Œå°†aldk_2014/download/ä¸‹çš„åŒ…é“¾æ¥åˆ°build/dl
+10.åˆ é™¤build/tmpï¼›
+   åˆ›å»ºbuild/externï¼Œbuild/extern/linuxï¼Œbuild/extern/toolchainï¼Œbuild/extern/toolsã€‚
+11.åˆ›å»º/extern/patches/ï¼Œå¹¶æ‹·è´vendorä¸‹çš„patchåˆ°è¯¥ç›®å½•
+12.customize-openwrt.sh build cht/GG9016RWAC22-TC/customize-openwrt-cht-GG9016RWAC22-TC.shï¼ˆæœ€ç»ˆæ˜¯GG9016RWAC22-TC.sh buildï¼‰
+13.å°†ç›¸å…³projectçš„configæ–‡ä»¶æ‹·è´è‡³buildç›®å½•ä¸‹çš„configå’Œtoolä¸‹
+14.æ‰§è¡Œquick-buildï¼šcdåˆ°buildç›®å½•ä¸‹è¿›è¡Œmakeæ“ä½œ
 
 
 
 
 
-ÉÏÍ¼ÊÇopenwrtÄ¿Â¼½á¹¹£¬ÆäÖĞµÚÒ»ĞĞÊÇÔ­Ê¼Ä¿Â¼£¬µÚ¶şĞĞÊÇ±àÒë¹ı³ÌÖĞÉú³ÉµÄÄ¿Â¼¡£¸÷Ä¿Â¼µÄ×÷ÓÃÊÇ£º
+ä¸Šå›¾æ˜¯openwrtç›®å½•ç»“æ„ï¼Œå…¶ä¸­ç¬¬ä¸€è¡Œæ˜¯åŸå§‹ç›®å½•ï¼Œç¬¬äºŒè¡Œæ˜¯ç¼–è¯‘è¿‡ç¨‹ä¸­ç”Ÿæˆçš„ç›®å½•ã€‚å„ç›®å½•çš„ä½œç”¨æ˜¯ï¼š
 
-tools - ±àÒëÊ±ĞèÒªÒ»Ğ©¹¤¾ß£¬ toolsÀï°üº¬ÁË»ñÈ¡ºÍ±àÒëÕâĞ©¹¤¾ßµÄÃüÁî¡£ÀïÃæÊÇÒ»Ğ©Makefile£¬ÓĞµÄ¿ÉÄÜ»¹ÓĞpatch¡£Ã¿¸öMakefileÀï¶¼ÓĞÒ»¾ä $(eval $(call HostBuild))£¬±íÊ¾±àÒëÕâ¸ö¹¤¾ßÊÇÎªÁËÔÚÖ÷»úÉÏÊ¹ÓÃµÄ¡£
-toolchain - °üº¬Ò»Ğ©ÃüÁîÈ¥»ñÈ¡kernel headers, C library, bin-utils, compiler, debugger
-target - ¸÷Æ½Ì¨ÔÚÕâ¸öÄ¿Â¼Àï¶¨ÒåÁËfirmwareºÍkernelµÄ±àÒë¹ı³Ì¡£
-package - °üº¬Õë¶Ô¸÷¸öÈí¼ş°üµÄMakefile¡£openwrt¶¨ÒåÁËÒ»Ì×MakefileÄ£°å£¬¸÷Èí¼ş²ÎÕÕÕâ¸öÄ£°å¶¨ÒåÁË×Ô¼ºµÄĞÅÏ¢£¬ÈçÈí¼ş°üµÄ°æ±¾¡¢ÏÂÔØµØÖ·¡¢±àÒë·½Ê½¡¢°²×°µØÖ·µÈ¡£
-include - openwrtµÄMakefile¶¼´æ·ÅÔÚÕâÀï¡£
-scripts - Ò»Ğ©perl½Å±¾£¬ÓÃÓÚÈí¼ş°ü¹ÜÀí¡£
-dl - Èí¼ş°üÏÂÔØºó¶¼·Åµ½Õâ¸öÄ¿Â¼Àï
-build_dir - Èí¼ş°ü¶¼½âÑ¹µ½build_dir/Àï£¬È»ºóÔÚ´Ë±àÒë
-staging_dir - ×îÖÕ°²×°Ä¿Â¼¡£tools, toolchain±»°²×°µ½ÕâÀï£¬rootfsÒ²»á·Åµ½ÕâÀï¡£
-feeds - OpenWrt»·¾³ËùĞèÒªµÄÈí¼ş°üÌ×¼ş
-bin - ±àÒëÍê³ÉÖ®ºó£¬firmwareºÍ¸÷ipk»á·Åµ½´ËÄ¿Â¼ÏÂ¡£
+tools - ç¼–è¯‘æ—¶éœ€è¦ä¸€äº›å·¥å…·ï¼Œ toolsé‡ŒåŒ…å«äº†è·å–å’Œç¼–è¯‘è¿™äº›å·¥å…·çš„å‘½ä»¤ã€‚é‡Œé¢æ˜¯ä¸€äº›Makefileï¼Œæœ‰çš„å¯èƒ½è¿˜æœ‰patchã€‚æ¯ä¸ªMakefileé‡Œéƒ½æœ‰ä¸€å¥ $(eval $(call HostBuild))ï¼Œè¡¨ç¤ºç¼–è¯‘è¿™ä¸ªå·¥å…·æ˜¯ä¸ºäº†åœ¨ä¸»æœºä¸Šä½¿ç”¨çš„ã€‚
+toolchain - åŒ…å«ä¸€äº›å‘½ä»¤å»è·å–kernel headers, C library, bin-utils, compiler, debugger
+target - å„å¹³å°åœ¨è¿™ä¸ªç›®å½•é‡Œå®šä¹‰äº†firmwareå’Œkernelçš„ç¼–è¯‘è¿‡ç¨‹ã€‚
+package - åŒ…å«é’ˆå¯¹å„ä¸ªè½¯ä»¶åŒ…çš„Makefileã€‚openwrtå®šä¹‰äº†ä¸€å¥—Makefileæ¨¡æ¿ï¼Œå„è½¯ä»¶å‚ç…§è¿™ä¸ªæ¨¡æ¿å®šä¹‰äº†è‡ªå·±çš„ä¿¡æ¯ï¼Œå¦‚è½¯ä»¶åŒ…çš„ç‰ˆæœ¬ã€ä¸‹è½½åœ°å€ã€ç¼–è¯‘æ–¹å¼ã€å®‰è£…åœ°å€ç­‰ã€‚
+include - openwrtçš„Makefileéƒ½å­˜æ”¾åœ¨è¿™é‡Œã€‚
+scripts - ä¸€äº›perlè„šæœ¬ï¼Œç”¨äºè½¯ä»¶åŒ…ç®¡ç†ã€‚
+dl - è½¯ä»¶åŒ…ä¸‹è½½åéƒ½æ”¾åˆ°è¿™ä¸ªç›®å½•é‡Œ
+build_dir - è½¯ä»¶åŒ…éƒ½è§£å‹åˆ°build_dir/é‡Œï¼Œç„¶ååœ¨æ­¤ç¼–è¯‘
+staging_dir - æœ€ç»ˆå®‰è£…ç›®å½•ã€‚tools, toolchainè¢«å®‰è£…åˆ°è¿™é‡Œï¼Œrootfsä¹Ÿä¼šæ”¾åˆ°è¿™é‡Œã€‚
+feeds - OpenWrtç¯å¢ƒæ‰€éœ€è¦çš„è½¯ä»¶åŒ…å¥—ä»¶
+bin - ç¼–è¯‘å®Œæˆä¹‹åï¼Œfirmwareå’Œå„ipkä¼šæ”¾åˆ°æ­¤ç›®å½•ä¸‹ã€‚

@@ -1,26 +1,26 @@
-1.HTML ָ���ǳ��ı�������� (Hyper Text Markup Language)
-HTML ����һ�ֱ�����ԣ�����һ�ֱ������ (markup language)
-2.HTML ��Ǳ�ǩͨ������Ϊ HTML ��ǩ (HTML tag)��
-3.Web ������������Ƕ�ȡ HTML �ĵ�
+1.HTML 指的是超文本标记语言 (Hyper Text Markup Language)
+HTML 不是一种编程语言，而是一种标记语言 (markup language)
+2.HTML 标记标签通常被称为 HTML 标签 (HTML tag)。
+3.Web 浏览器的作用是读取 HTML 文档
 4.
-<html> �� </html> ֮����ı�������ҳ
-<body> �� </body> ֮����ı��ǿɼ���ҳ������
-<h1> �� </h1> ֮����ı�����ʾΪ����
-<p> �� </p> ֮����ı�����ʾΪ����
-5.HTML Ԫ���﷨
-HTML Ԫ���Կ�ʼ��ǩ��ʼ
-HTML Ԫ���Խ�����ǩ��ֹ
-Ԫ�ص������ǿ�ʼ��ǩ�������ǩ֮�������
-6.�ڿ�ʼ��ǩ������б�ܣ����� <br />���ǹرտ�Ԫ�ص���ȷ������HTML��XHTML �� XML ���������ַ�ʽ��
-7.���������� HTML Ԫ�صĿ�ʼ��ǩ�й涨
-8.��������������/ֵ�Ե���ʽ���֣����磺name="value"��
-���������� HTML Ԫ�صĿ�ʼ��ǩ�й涨
-9.<h1> �������ı��⡣<h6> ������С�ı��⡣
-10.<script> </script>�����Ԫ���ڲ��Ĵ���û��λ��ĳ�������У���ô��Щ�������ҳ�汻����ʱ������ִ�С�<frameset> ��ǩ֮��Ľű��ᱻ���ԡ�
-11.<script> </script>�����ļ�ʱ�����ļ���ֱ���д��룬ֱ��ִ�д��루�൱�ڰ�.js�ļ�����ֱ�ӿ�����html�
-12.DOM��
-DOMʵ���������������ʽ�������ĵ�ģ�͡�DOM�����˱�ʾ���޸��ĵ�����Ķ�����Щ�������Ϊ�������Լ���Щ����֮��Ĺ�ϵ��
-���԰�DOM��Ϊ��ҳ�������ݺͽṹ��һ�����α�ʾ������ҳ�浱Ȼ���ܲ��������������ķ�ʽ����ʵ�֡�
+<html> 与 </html> 之间的文本描述网页
+<body> 与 </body> 之间的文本是可见的页面内容
+<h1> 与 </h1> 之间的文本被显示为标题
+<p> 与 </p> 之间的文本被显示为段落
+5.HTML 元素语法
+HTML 元素以开始标签起始
+HTML 元素以结束标签终止
+元素的内容是开始标签与结束标签之间的内容
+6.在开始标签中添加斜杠，比如 <br />，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。
+7.属性总是在 HTML 元素的开始标签中规定
+8.属性总是以名称/值对的形式出现，比如：name="value"。
+属性总是在 HTML 元素的开始标签中规定
+9.<h1> 定义最大的标题。<h6> 定义最小的标题。
+10.<script> </script>假如此元素内部的代码没有位于某个函数中，那么这些代码会在页面被加载时被立即执行。<frameset> 标签之后的脚本会被忽略。
+11.<script> </script>链接文件时，如文件内直接有代码，直接执行代码（相当于吧.js文件内容直接拷贝到html里）
+12.DOM：
+DOM实际上是以面向对象方式描述的文档模型。DOM定义了表示和修改文档所需的对象、这些对象的行为和属性以及这些对象之间的关系。
+可以把DOM认为是页面上数据和结构的一个树形表示，不过页面当然可能并不是以这种树的方式具体实现。
 13.
 
 
