@@ -1,0 +1,35 @@
+buntu16.04开机启动字符界面听语音
+需要自己的ubuntu系统直接开机进入字符界面登录，发现使用之前的修改grub方法不好用了，怎么办呢？我们一起来看看。
+
+方法/步骤
+1
+首先我们修改grub文件，把其中的GRUB_CMDLINE_LINUX_DEFAULT="text"还有取消GRUB_TERMINAL=console之前的注释#。
+$sudo gedit  /etc/default/grub
+ubuntu16.04开机启动字符界面
+2
+然后更新我们的grub。
+$sudo update-grub
+ubuntu16.04开机启动字符界面
+3
+设置开机进入字符界面。
+$sudo  systemctl  set-default  multi-user.target
+ubuntu16.04开机启动字符界面
+4
+然后我们重新启动我们的ubuntu。
+$sudo   reboot 
+ubuntu16.04开机启动字符界面
+5
+重启后就进入我们的tty1字符界面了。
+ubuntu16.04开机启动字符界面
+6
+输入用户名，密码进行登录。
+ubuntu16.04开机启动字符界面
+7
+在字符界面下要登录图形界面可以使用以下的命令。
+$sudo  systemctl  start  lightdm
+ubuntu16.04开机启动字符界面
+8
+如果要回到开机启动直接进入图形界面，可以执行以下的命令。
+$sudo  systemctl  set-default    graphical.target
+
+PS:好像并不需要第1、2步，直接便可以设置。
