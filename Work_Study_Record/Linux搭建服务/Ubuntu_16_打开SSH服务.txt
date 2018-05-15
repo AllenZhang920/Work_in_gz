@@ -3,6 +3,7 @@
 ps -e | grep sshd
 2）安装SSH-server （如果报错切换到root用户执行安装）
 
+
 apt-get install openssh-server
 3） 安装SSH-client
 
