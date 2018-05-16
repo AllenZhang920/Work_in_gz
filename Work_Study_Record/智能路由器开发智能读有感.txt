@@ -1,0 +1,12 @@
+openwrt系统
+UCI：统一配置接口
+
+用于openwrt系统的配置。
+很多第三方的应用软件支持UCI兼容的配置文件，启动时由UCI配置文件转换为软件包的原始配置文件。
+工作原理（以dnsmasq为例）：
+在启动的过程中，调用/etc/init.d/dnsmasq 脚本，dnsmasq脚本会根据uci配置文件（/etc/config/dhcp）来自动生成应用程序需要格式的的配置文件（/var/etc/dnsmasq.conf）
+
+
+
+openwrt系统启动过程
+/etc/inittab/-->rcS-->/etc/init.d/rcS*各个启动脚本（rcS*实际上是在/etc/rc.d下的链接
