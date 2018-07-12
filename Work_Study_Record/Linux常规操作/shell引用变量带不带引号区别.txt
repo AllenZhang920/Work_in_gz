@@ -1,0 +1,20 @@
+用双引号的话，会阻止 bash 或者其它什么对部分特殊字符进行匹配。也就是说，你可以不对某些字符前置转义符号。
+我举个例子：
+
+没有引号：
+$ ls -alh a?b.txt
+-rw-r--r-- 1 xxxxx xxxxx 7 Jul 26 23:11 a:b.txt
+-rw-r--r-- 1 xxxxx xxxxx 6 Jul 26 23:13 a?b.txt
+-rw-r--r-- 1 xxxxx xxxxx 5 Jul 26 23:12 a*b.txt
+
+有引号：
+$ ls -alh "a?b.txt"
+-rw-r--r-- 1 xxxxx xxxxx 6 Jul 26 23:13 a?b.txt
+
+转义符：$ ls -alh a\?b.txt
+-rw-r--r-- 1 xxxxx xxxxx 6 Jul 26 23:13 a?b.txt
+
+作者：知乎用户
+链接：https://www.zhihu.com/question/33466555/answer/56556068
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

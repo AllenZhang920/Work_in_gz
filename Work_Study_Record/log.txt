@@ -1,0 +1,2 @@
+1.#define	ht_dbg(fmt, arg...)		printf("[%s] "fmt, __FUNCTION__ , ## arg)
+

@@ -1,0 +1,44 @@
+For git usage, Please read ​http://10.118.81.197/wiki/GitSecurity first.
+download repo script to ~/bin
+chmod +x repo
+echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
+export PATH=$PATH:$HOME/bin
+Send your public key "~/.ssh/id_rsa.pub" to administrator(Ten?) for he add to repo server.
+repo init -u admin@10.118.81.197:manifest --no-repo-verify
+repo sync -f
+repo start master --all
+cd aldk
+# For WSR-2533DHP (old project)
+ln -s configs/test/buffalo/WG9117FAAC44-J6/default.mk default.mk
+# For WSR-2533DHPL
+ln -s configs/test/buffalo/WG9117FBAC44-J6/default.mk default.mk 
+# For WSR-2533DHP2
+ln -s configs/test/buffalo/WG9115MAC44-J6/default.mk default.mk
+make
+After build, the image for WSR-2533DHP is in the build/bin/ramips/.
+openwrt-ramips-mt7621-uImage-encrypt.bin
+openwrt-ramips-mt7621-uImage-trx.bin
+After build, the image for WSR-2533DHP2 is in the build/bin/mtkarm/
+openwrt-mtkarm-squashfs-encrypt.bin
+openwrt-mtkarm-squashfs-trx.bin
+How to build previous version like 1.00R0.08 for WSR-2533DHP2
+(1)download aldk and arcadyan-utility
+mkdir WSR_2533DHP2_build
+cd WSR_2533DHP2_build
+repo init -u admin@10.118.81.197:manifest --no-repo-verify
+repo sync -f
+repo start master --all
+
+(2)checkout repo repository to tag you need
+cd WSR_2533DHP2_build
+repo forall -c git checkout WSR-2533DHP2_1.00_0.08_JP_2018_03_28
+mkdir -p aldk/build/extern
+cd aldk/build/extern
+git clone git://10.118.81.197/mtk-openwrt-4.0.0.0 mtk-openwrt
+cd mtk-openwrt
+git checkout WSR-2533DHP2_1.00_0.08_JP_2018_03_28
+
+(3)start to build
+cd WSR_2533DHP2_build/aldk
+ln -s configs/test/buffalo/WG9115MAC44-J6/default.mk default.mk
+make 2>&1 | tee log
