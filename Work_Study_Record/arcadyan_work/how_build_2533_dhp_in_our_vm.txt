@@ -1,0 +1,21 @@
+重要：
+mtk for 2533DHP2:
+1.对于uboot的编译，使用提供的buildroot-gcc492_arm编译链进行编译
+2.对于sdk本身的编译，会先自动生成编译链，再build
+sdk的code;同样arcadyan本身的code编译需要使用这种生成的编译链
+(编译链为toolchain-aarch64_cortex-a53+neon-vfpv4_gcc-5.4.0_glibc-2.24)
+
+一. build mtk sdk firmware(被arcadyan修改过的)
+
+1.编译bootloader
+a.在bootloader/toolchain找到编译链(官方给的包mtk-openwrt-4.0.0.0-20180102-8fb391ee.tar)，解压到/opt即可
+tar jxvf buildroot-gcc492_arm.tar.bz2 -C /opt
+b.接下来在uboot目录下直接make V=99编译即可，如果遇到找不到awk，安装apt-get install gwak
+
+2.编译mtk openwrt code
+a.在目录下直接make V=99即可
+
+
+二. build arcadyan firmware
+
+b.如果遇到找不到subversion，安装apt-get install subversion

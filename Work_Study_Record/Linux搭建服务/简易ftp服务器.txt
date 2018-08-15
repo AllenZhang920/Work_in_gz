@@ -1,0 +1,4 @@
+1.sudo apt-get install vsftpd
+2.修改/etc/vsftpd.conf,write_enable=YES
+
+如需要进行安全设置，请继续设置

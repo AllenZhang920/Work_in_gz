@@ -1,0 +1,21 @@
+diff --git a/core/arc-middle/mng/action.c b/core/arc-middle/mng/action.c
+index 3eb6c67..6b8ca49 100644
+--- a/core/arc-middle/mng/action.c
++++ b/core/arc-middle/mng/action.c
+@@ -70,12 +70,16 @@ int mng_action(const char * action, const char * param)
+ 	request_action_p req;
+ 	int len;
+ 	int ret = -1;
++	char cmd[128] = {0};
+ 
+ 	if(action == NULL || action[0] == '\0')
+ 	{
+ 		return 0;
+ 	}
+ 
++	sprintf(cmd, "echo %s >> /tmp/actions", action);
++	system(cmd);
++
+ 	if(param == NULL)
+ 	{
+ 		param = "";

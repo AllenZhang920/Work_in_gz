@@ -1,7 +1,4 @@
 1.First time to login "root" 
 sudo passwd;type current user password;type new password for root,type again;
-2.
-
 
 a.安装git服务器,sudo apt-get install git
-b.

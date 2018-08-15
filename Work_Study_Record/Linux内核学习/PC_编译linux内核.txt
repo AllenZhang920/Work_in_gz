@@ -1,0 +1,24 @@
+环境Ubuntu 5.4.0-6ubuntu1~16.04.9（内核版本4.13.0-36） 升级为4.17.14
+
+1.下载linux源码，www.kernel.org
+2.放置在/usr/src下
+3.使用xz -d 解压压缩包，再使用tar xvf 解压压缩包(xz用来解压.xz压缩包，解压后是.tar形式的压缩包)
+4.安装编译内核所需要的工具
+sudo apt-get install libncurses5-dev libssl-dev
+sudo apt-get install build-essential openssl
+sudo apt-get install zlibc minizip
+sudo apt-get install libidn11-dev libidn11
+sudo apt-get install bison flex
+
+5.拷贝/boot/目录下当前系统的config文件到源码目录.config
+ cp /boot/config-4.13.0-36-generic ./.config
+
+6.make bzImage V=1 (make zImage适用用小内核，make bzImage适用于大内核)
+7.会遇到询问是否config新的包，随心而选即可
+8.编译完成后会在arch/x86/boot/下生产bzImage文件
+
+9.make modules(编译模块)
+10.make modules_install(安装模块，主要是讲模块文件拷贝到/lib/modules/4.17.14/下)
+11.拷贝image和
+cp arch/x86/boot/bzImage /boot/vmlinuz-4.17.14-myimage
+

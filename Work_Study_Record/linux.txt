@@ -1,5 +1,0 @@
-
-FTP Server
-
-1.Install vsftpd
-	a.鏂板缓鐩
