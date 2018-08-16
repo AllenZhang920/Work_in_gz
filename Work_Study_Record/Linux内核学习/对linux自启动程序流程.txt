@@ -1,0 +1,7 @@
+自我理解，未认证
+1.系统启动会先启动init进程，进程pid为1
+2./etc/inittab为init进程的配置文件，定义一些程序启动的触发条件
+例如一般会有：
+::sysinit:/etc/init.d/rcS
+3.rcS是一个脚本，会调用/etc/rc.d/下面的脚本，启动/etc/rc.d下的脚本其实是/etc/init.d/下脚本的链接。
+
