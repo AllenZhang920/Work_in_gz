@@ -1,3 +1,8 @@
+测试在ubuntu14.04.5 64位系统实验通过；
+1.必须使用64位系统，不然出错
+2.使用ubuntu14.04.5版本（mtk所使用的版本），尝试使用ubuntu16.04版本，编译过程有错，应该某些编译工具版本不一致导致（未深究）
+
+
 重要：
 mtk for 2533DHP2:
 1.对于uboot的编译，使用提供的buildroot-gcc492_arm编译链进行编译
@@ -5,6 +10,7 @@ mtk for 2533DHP2:
 sdk的code;同样arcadyan本身的code编译需要使用这种生成的编译链
 (编译链为toolchain-aarch64_cortex-a53+neon-vfpv4_gcc-5.4.0_glibc-2.24)
 
+在公司局域网编译系统：
 一. build mtk sdk firmware(被arcadyan修改过的)
 
 1.编译bootloader
@@ -17,5 +23,49 @@ a.在目录下直接make V=99即可
 
 
 二. build arcadyan firmware
+a.在安装uboot编译链后，和各种编译工具(编译内核所需的工具，可参考linuxPC
+内核所需工具部分)后，直接参考在arcadyan的编译步骤执行即可
+b.如果遇到找不到subversion，wak,安装apt-get install subversion;apt-get install
+gwak
 
-b.如果遇到找不到subversion，安装apt-get install subversion
+
+
+在公司局域网完全下载编译系统：
+1.安装ubuntu14.04.5 64位系统
+2.安装相应的git,ssh工具
+3.安装repo相关环境
+	a.将repo脚本拷贝到~/bin/目录下，并且赋权限，环境变量
+		mkdir ~/bin
+		cp repo ~/bin/
+		chmod a+x ~/bin/repo
+		echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
+		export PATH=$PATH:$HOME/bin
+4.ssh秘钥复制
+	scp -r allen_zhang@10.118.81.217:/home/allen_zhang/.ssh ~/
+
+
+5.安装git-repo
+	sudo mkdir /repo
+	tar xvf git-repo.tar.tar
+	sudo cp -r git-repo.git /repo/
+	/*配置git global值，不然repo出错,任意配置*/
+	git config --global user.email "allen@qq.com"
+    git config --global user.name "allen"
+
+
+7.安装可能需要的工具(参考了常规编译内核的工具，不一定都需要)：
+sudo apt-get install libncurses5-dev libssl-dev
+sudo apt-get install build-essential openssl
+sudo apt-get install zlibc minizip
+sudo apt-get install libidn11-dev libidn11
+sudo apt-get install bison flex
+sudo apt-get install subversion gwak
+8.修改ubuntu的/bin/sh为bash，而不是默认的dash
+sudo dpkg-reconfigure dash,选择NO
+
+9.安装uboot的编译链 
+sudo tar jxvf buildroot-gcc492_arm.tar.bz2 -C /opt
+
+脱离公司局域网，编译系统：（由于编译系统过程中需要到其他地方获取软件包和mtk
+openwrt源码，故需要先把这部分放置在另一个虚拟机上）
+

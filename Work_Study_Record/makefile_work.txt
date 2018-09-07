@@ -1,0 +1,77 @@
+1. include default.mk(定义一些系统变量)
+2. 定义系统变量(补充default.mk没有定义的变量)
+
+3.$(PROJECT_NAME): build-info prepare-build
+	cd $(BUILD_DIR) && $(MAKE) $(LOG_LEVEL) 2>&1 | tee $(LOG_FILE)
+  
+
+	build-info:打印系统变量信息
+	preprare-build 
+	cd $(BUILD_DIR) && $(MAKE) $(LOG_LEVEL) 2>&1 | tee $(LOG_FILE) 进入build目录，build aldk系统
+
+3a.
+prepare-build: clean-link clean-pre-patched $(BASE_DIR)/.pre-patched
+	#创建build下各种所需目录
+	# setup build root directory
+	$(MKDIR) $(BUILD_DIR)
+	# setup build tmp directory
+	$(MKDIR) $(TMP_DIR)
+	# setup gpl release directory
+	$(MKDIR) $(GPL_DIR)
+	# setup download directory
+	$(MKDIR) $(DOWNLOAD_DIR)
+
+	# 调用download-sources.sh 将openwrt-download-list.txt需求的包下载到aldk/download下
+	$(SCRIPTS_DIR)/download-sources.sh $(DOWNLOAD_URL) $(DOWNLOAD_DIR) $(CONFIGS_DIR)/$(BUILD_SYSTEM)-download-list.txt
+
+	# 将某个版本的openwrt版本的内容直接拷贝到build目录下
+	$(CP) $(BASE_DIR)/$(BUILD_SYSTEM)/$(BUILD_SYSTEM_VERSION)/* $(BUILD_DIR)/
+
+	# clean tmp/ in $(BUILD_DIR)/
+	$(RM) $(BUILD_DIR)/tmp
+
+	# 创建build/extern目录
+	$(MKDIR) $(EXTERN_DIR)
+	$(MKDIR) $(EXTERN_DIR)/linux
+	$(MKDIR) $(EXTERN_DIR)/toolchain
+	$(MKDIR) $(EXTERN_DIR)/tools
+	
+	# 拷贝patches到build/extern/patched目录
+	$(MKDIR) $(EXTERN_DIR)/patches/
+	[ ! -d $(CONFIGS_DIR)/patches ] || $(CP) $(CONFIGS_DIR)/patches/* $(EXTERN_DIR)/patches/
+
+
+	# symbol link PROJECT packages into build root directory
+	#给build/package/下的包链接到真正包所在的位置。相当于ln -sf package/arcadyan/httpd package/httpd
+	#将所有需要的包链接到build/package下，不需要直接拷贝过来,便可以按照openwrt的目录结构进行编译
+ifeq ($(USE_BUILD_SYSTEM_VERSION), yes)
+	$(SCRIPTS_DIR)/symbol-link.sh $(PACKAGES_DIR)/$(BUILD_SYSTEM)/$(BUILD_SYSTEM_VERSION) $(BUILD_DIR) $(CONFIGS_DIR)/$(BUILD_SYSTEM)-packages-list.txt
+else
+	$(SCRIPTS_DIR)/symbol-link.sh $(PACKAGES_DIR)/$(BUILD_SYSTEM) $(BUILD_DIR) $(CONFIGS_DIR)/$(BUILD_SYSTEM)-packages-list.txt
+endif
+	# $(SCRIPTS_DIR)/symbol-link-dl-$(BUILD_SYSTEM).sh $(DOWNLOAD_DIR) $(BUILD_DIR)
+	# 将aldk/download预下载的软件压缩包拷贝到build/dl目录下
+	- $(SCRIPTS_DIR)/prepare-dl-$(BUILD_SYSTEM).sh $(DOWNLOAD_DIR) $(BUILD_DIR) $(CONFIGS_DIR)/$(BUILD_SYSTEM)-download-list.txt
+
+	# copy arcadyan-utility_2013
+	# 2013_11_15 yuzhang; force compress arcadyan-utility_2013 into arcadyan-utility-0.5.tar.gz
+	$(MV) ../arcadyan-utility_2013 ../arcadyan-utility-0.5 ; \
+	tar czf arcadyan-utility-0.5.tar.gz ../arcadyan-utility-0.5 ; \
+	$(CP) arcadyan-utility-0.5.tar.gz $(BUILD_DIR)/dl/ ; \
+	$(MV) arcadyan-utility-0.5.tar.gz $(DOWNLOAD_DIR) ; \
+	$(MV) ../arcadyan-utility-0.5 ../arcadyan-utility_2013 ; \
+
+	# setup project defconfig
+	$(CP) $(CONFIGS_DIR)/$(BUILD_SYSTEM)-defconfig $(BUILD_DIR)/.config
+	# setup web config
+	[ ! -e $(CONFIGS_DIR)/.config_web ] || $(CP) $(CONFIGS_DIR)/.config_web $(BUILD_DIR)/.config_web
+
+	cd $(BUILD_DIR) && $(MAKE) oldconfig
+	# write build sku, arcadyan utility package need this value
+	echo "CONFIG_ARCADYAN_BUILD_SKU=$(BUILD_SKU)" >> $(BUILD_DIR)/.config
+
+	# 最终调用customize-openwrt-buffalo-WG9115MAC44-J6.sh 会进入SDK目录，build uboot 和sdk openwrt
+	$(SCRIPTS_DIR)/customize-$(BUILD_SYSTEM).sh $(BUILD_DIR) $(CONFIGS_DIR)/customize-$(BUILD_SYSTEM)-$(PROJECT_NAME).sh
+	# copy rootfs customizing scripts, 将会被target/linux/mtkarm/image/Makefile使用到
+	$(CP) $(CONFIGS_DIR)/customize-rootfs-$(PROJECT_NAME).sh $(EXTERN_DIR)/tools/customize-rootfs.sh
+

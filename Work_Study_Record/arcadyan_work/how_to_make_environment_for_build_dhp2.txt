@@ -1,0 +1,29 @@
+
+
+
+
+1.制作一个虚拟机，包含所需软件包，mtk的openwrt源码
+
+2.
+
+
+
+
+
+
+
+
+
+
+
+
+1.制作虚拟机
+a.制作一个ubuntu14.04.5虚拟机
+b.建立软件包的ftp目录仓库
+  b.1 安装vsftpd
+  b.2 新建ftp用户，并且建立ftp用户目录
+		sudo mkdir /home/ftp;
+		sudo useradd -d /home/ftp -s /bin/bash ftp;
+		sudo chown ftp:ftp /home/ftp;将目录/home/ftp的所属者和所属组都改为ftp
+  
+  b.3 在/home/ftp/sources 目录下：wget -P ./ ftp://10.118.81.196/pub/sources/* 

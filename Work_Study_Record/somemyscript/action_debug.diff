@@ -1,8 +1,22 @@
 diff --git a/core/arc-middle/mng/action.c b/core/arc-middle/mng/action.c
-index 3eb6c67..6b8ca49 100644
+index 3eb6c67..317e1be 100644
 --- a/core/arc-middle/mng/action.c
 +++ b/core/arc-middle/mng/action.c
-@@ -70,12 +70,16 @@ int mng_action(const char * action, const char * param)
+@@ -24,6 +24,13 @@
+ #define BUF_FULL_STR " ...\n(Buffer is full, unable to receive all data.)\n"
+ #define BUF_FULL_STR_SZ sizeof(BUF_FULL_STR)
+ 
++#define cprintf(fmt, args...) do { \
++	FILE *fp = fopen("/dev/console", "w"); \
++	if (fp) { \
++		fprintf(fp, fmt, ## args); \
++		fclose(fp); \
++	} \
++} while (0)
+ int send_msg(const unsigned char * msg, int len)
+ {
+     int s;
+@@ -70,12 +77,17 @@ int mng_action(const char * action, const char * param)
  	request_action_p req;
  	int len;
  	int ret = -1;
@@ -15,6 +29,7 @@ index 3eb6c67..6b8ca49 100644
  
 +	sprintf(cmd, "echo %s >> /tmp/actions", action);
 +	system(cmd);
++	cprintf("allenlog: action:%s\n",action);
 +
  	if(param == NULL)
  	{
