@@ -1,0 +1,43 @@
+#define mycprintf(fmt, args...) do { \
+	FILE *fp = fopen("/dev/console", "w"); \
+	if (fp) { \
+		fprintf(fp, fmt, ## args); \
+		fclose(fp); \
+	} \
+} while (0)
+int read_file_by_lines(const char*filename)
+{
+	FILE *fp;
+	char line[256];
+	if ((fp = fopen(filename, "r")) == NULL) return -1;
+	
+	mycprintf("The %s context:\n",filename);
+	while(fgets(line, sizeof(line), fp))
+	{
+		mycprintf("%s\n",line);	
+	}
+	fclose(fp);
+	return 0;
+	
+}
+int read_command_output(const char*cmd)
+{
+	FILE *fp;
+	char line[256];
+	char filename[64];
+	char cmd_string[128];
+	//sprintf(filename, "/tmp/read_command_%s", cmd);
+	sprintf(filename, "/tmp/read_command_output");
+	sprintf(cmd_string, "%s > %s",cmd,filename);
+	system(cmd_string);
+	if ((fp = fopen(filename, "r")) == NULL) return -1;
+	
+	mycprintf("The %s result:\n",cmd);
+	while(fgets(line, sizeof(line), fp))
+	{
+		mycprintf("%s\n",line);	
+	}
+	fclose(fp);
+	remove(filename);
+	return 0;
+}

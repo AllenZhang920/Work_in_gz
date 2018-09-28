@@ -68,4 +68,10 @@ sudo tar jxvf buildroot-gcc492_arm.tar.bz2 -C /opt
 
 脱离公司局域网，编译系统：（由于编译系统过程中需要到其他地方获取软件包和mtk
 openwrt源码，故需要先把这部分放置在另一个虚拟机上）
+1.虚拟机存放开源包
+	a.安装vsftpd
+	b.开启匿名访问,只需要修改anonymous_enable=YES即可，默认在/srv/ftp/
+	c.从已build的dl目录下拷贝软件包（这样只需要拷贝所需的软件包）
+	d.sudo mkir source
+	e.sudo scp -r allen_zhang@10.118.81.217:/home/allen_zhang/project/DHP2-9-13/aldk/build/dl/* ./
 
