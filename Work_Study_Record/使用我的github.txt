@@ -1,0 +1,9 @@
+
+github账号密码：
+Allen_Zhang920@163.com
+密码：hint****
+
+1.安装git软件（windows或者linux）
+2.生成ssh密钥（ssh-keygen -t rsa -C "youremail@example.com"）
+3.将公钥添加到github中，将 cat ~/.ssh/id_rsa.pub内容添加到github中
+4.克隆仓库：git clone git@github.com:AllenZhang920/Work_in_gz.git
