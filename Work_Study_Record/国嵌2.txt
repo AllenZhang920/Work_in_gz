@@ -1,0 +1,193 @@
+信号：
+
+发送信号
+int kill(pid_t pid ,int sig)
+pid > 0 时，表示接收信号的进程id
+
+设置信号处理方式
+signal(int signum,handler)
+
+signum:要处理的信号
+handler：对应信号的处理方式
+1.SIG_IGN忽略
+2.SIG_DEL默认处理
+3.用户自定义函数
+
+
+
+
+
+1.创建/打开信号量
+
+int semget(key_t key ,int nsems,int semflg)获取信号量集合的标识符
+
+
+
+
+key
+键值：
+一个数字，用来生成信号量。
+
+指定键值：
+使用F
+ftok()构造一个尽量不会被别的IPC对象用到的数
+Ftok（文件名，项目id）;(实际上文件名对应一个数值，与项目id组成一个数值)
+
+
+
+nsems
+
+这个信号量集合里面包含的信号量数目
+
+
+
+semflg
+标志，
+可以取IPC_CREAT
+当key所指定的信号量不存在的时候，并且semflg去IPC_CREAT时，会创建一个信号量集合
+
+
+操作信号量
+
+
+2.操作信号量
+int semop(int semid,struct sembuf *sops,unsigned nsops)
+
+
+
+semid
+信号量集合的标识符
+
+sops
+执行什么操作
+
+nsops
+要操作多少个信号
+
+
+
+写程序步骤：
+1.创建信号量
+2.获取信号量
+3.释放信号量
+信号量初始值不确定，可以通过semctl来设置信号量的值
+
+
+
+进程同步：
+一组并发进程进行互相合作，使得各进程按照一定的顺序执行，成为进程的同步
+
+生产者与消费者问题：
+生产者还没完成产品，消费者就拿去消费了。
+
+
+互斥：PV(P是获取信号量操作，V是释放操作)在同一个进程里存在
+同步：PV分别位于不同进程中。
+
+
+
+
+共享内存
+划分一段内存供多个进程共享
+1.shmget（key_t key,int size ,int shmflg）创建共享内存(如果没有就创建)
+2.shmat（int shmid ,char * shmaddr,int flag）影射共享内存到进程地址
+
+
+一般两个进程影射好了地址后，通过写数据，另一个拷贝数据就可以进行通信
+
+
+消息队列：
+一个消息的队列是一个队列，可以写入可以被读走。
+每个消息队列对应一个键值。
+
+获取消息队列描述符：
+int msgget(key_t key, int msgflg);
+msgflg 可以包含IPC_CREAT
+
+int msgsnd(int msqid, const void *msgp, size_t msgsz, int msgflg);
+
+ssize_t msgrcv(int msqid, void *msgp, size_t msgsz, long msgtyp,int msgflg);
+
+msgp结构体应包含mtype类型和数据data
+
+
+
+多线程：
+使用pthread.a库，不属于Linux所有，编译时需要-lpthread
+创建线程
+int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine) (void *), void *arg);
+
+如果进程中任何一个线程中调用exit或_exit，那么整个进程都会终止。
+线程的正常退出方式有：
+（1）线程从启动例程中返回（return）
+（2）线程可以被另一个进程终止(kill)
+（3）线程自己调用pthread_exit函数
+void pthread_exit(void *retval);
+
+等待某个线程结束，阻塞进程
+int pthread_join(pthread_t thread, void **retval);
+
+进程结束后，线程也会结束
+
+返回线程id
+pthread_t pthread_self(void);
+
+
+
+网络编程
+socket
+1.SOCK_STREAM流式套接字，使用TCP协议
+2.SOCK_DGRAM数据包套接字，使用UDP协议
+3.SOCK_RAW原始套接字，允许使用IP协议
+
+struct sockaddr记录网路地址
+struct sockaddr
+{
+	u_short sa_family;//协议族
+	char sa_data[14];//14字节的特定协议地址
+}
+
+一般使用sockaddr_in（与sockaddr等价）操作编程
+struct sockaddr_in
+{
+	short int sin_family;//协议族
+	unsigned short int sin_port;//端口号
+	struct in_addr sin_addr;//协议特定地址
+	unsigned  char sin_zero[8];//填0		
+}
+
+typedef uint32_t in_addr_t;
+struct in_addr
+  {
+    in_addr_t s_addr;
+  };
+
+1．Little endian：将低序字节存储在起始地址
+2．Big endian：将高序字节存储在起始地址---
+网络字节序是：大端（低字节先传输，高字节后）
+uint32_t htonl(uint32_t hostlong);
+uint16_t htons(uint16_t hostshort);
+uint32_t ntohl(uint32_t netlong);
+uint16_t ntohs(uint16_t netshort);
+
+inet_aton() converts the Internet host address cp from the IPv4 numbers-and-dots  nota‐
+       tion  into  binary form
+
+
+
+
+TCP服务端程序创建过程：
+建立监听socket，通过bind绑定到服务地址和端口后，调用listen开始监听服务端口。
+这时在操作系统内核会建立SYN队列（未完成握手队列）和ACCEPT队列（已完成握手队列），队列长度由listen函数backlog参数指定。
+客户端调用connect向服务端发起建立TCP连接，服务端处理步骤如下：
+1） 客户端发SYN包到服务端，内核把这一信息放入SYN队列，同时回一个SYN+ACK包给客户端，如图1.1~1.3所示。
+2） 客户端发起服务端的SYN应答ACK包，内核会把连接信息从SYN队列取出来插入到ACCEPT队列，如图2.1~2.3所示。
+3） 服务端调用accept接受连接，其实就是从内核ACCEPT队列中取出已经建立成功的连接，拷贝到用户空间，并创建一个新的socket
+
+
+
+循环服务器：
+accept后占有进程，直到释放
+
+并发服务器：
+如果accept后，创建子进程去处理accept的新socket
