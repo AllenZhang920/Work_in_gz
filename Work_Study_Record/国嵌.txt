@@ -1,0 +1,64 @@
+gdb调试
+
+a.编译时加入 -g 选项
+b.可以设置断点，单步调试等……
+个人感觉使用log调试比gdb调试更快速更方便
+
+
+Core Dump(配合gdb使用，编译需要加入-g)
+主要处理segment fault 错误：
+1.segment fault 原因：
+a.数据访问越界
+b.访问空指针
+c.栈溢出
+d.修改只读内存
+
+该功能默认是关闭的，通过ulimit命令打开/关闭
+打开：ulimit -c unlimited
+关闭: ulimit -c 0
+
+出现segment fault后会生成core文件，可以通过gdb分析core文件
+gdb ./test core
+
+
+
+
+创建静态库变成流程
+gcc -c allenapi.c -o allenapi.o
+ar cqs liballenapi.a allenapi.o //生成静态库
+gcc -static test.c -lallenapi -L ./ -o test
+./test
+
+
+创建动态库流程
+gcc -c -fPIC allenapi.c -o allenapi.o         
+gcc -shared -fPIC allenapi.o -o liballenapi.so //生成动态库
+gcc test.c -o test -lallenapi      
+sudo cp liballenapi.so /usr/lib/
+./test 
+
+
+时间函数：
+1.世界标准时间(UTC)，也是格林威治时间(GMT)
+2.日历时间：从1970年1月1日0点开始的时间，用秒数来表示
+
+获取日历时间
+time_t time(time_t *t)
+
+将日历时间转为世界标准时间
+struct tm *gmtime(const time_t *timep)
+将日历时间转为当地时间
+struct tm *localtime(const time_t *timep);
+将日历时间转为字符串
+char *asctime(const struct tm)
+如果需要微秒级的时间，使用gettimeofday()(可以用来计算某个工作的耗时)
+
+usage:
+time_t t;
+struct tm *tm;	
+char *stime;
+t = time(NULL); 
+tm = localtime(&t);
+printf("now,the local time is  %d:%d\n",tm->tm_hour,tm->tm_minute);
+stime = asctime(tm);
+printf("Now the time :%\n",stime);

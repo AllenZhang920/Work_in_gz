@@ -1,0 +1,13 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+allen_get_gmtime	allenapi.c	/^void allen_get_gmtime()$/;"	f
+main	hello.S	/^main:$/;"	l
+main	hello.c	/^void main()$/;"	f
+main	seg_error.c	/^int main()$/;"	f
+main	test.c	/^int main()$/;"	f
+test	allenapi.c	/^void test()$/;"	f
+test_shared	allenapi.c	/^void test_shared()$/;"	f
