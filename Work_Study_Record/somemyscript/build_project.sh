@@ -1,5 +1,9 @@
 #!/bin/sh
 #version-1
+usage() 
+{
+  echo "usage: $0 <hour> "
+}
 check_time_come() 
 {
 	while ((1))
@@ -15,7 +19,13 @@ check_time_come()
 	done
 }
 
-check_time_come $1
+s_hour=$1
+if [ "x${s_hour}" = "x" ] ; then
+  usage
+  exit -1
+fi
+
+check_time_come ${s_hour}
 date_day=`date +%m%d`
 path=/home/allen_zhang/project/DHP2-${date_day}
 if [ -d ${path} ];then
