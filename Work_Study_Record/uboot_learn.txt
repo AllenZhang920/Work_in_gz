@@ -1,0 +1,22 @@
+1.在uboot1.1.6目录下执行make smdk2410_config后  
+会链接asm,asm-arm/arch,asm-arm/proc
+生成include/config.h ,include/config.mk
+
+
+	include/asm
+	include/asm-arm/arch
+	include/asm-arm/proc
+	include/config.h
+	include/config.mk
+
+
+2.
+在Makefile ,
+
+inclue include/config.mk   ;将当前要build的ARCH CPU BOARD VENDOR SOC 包进来，用于判断交叉编译链等变量
+include config.mk			; 定义链接脚本，LDFLAGS等变量内容
+include board/smdk2410/config.mk ; 将TEXT_BASE的变量内容包进来
+确定OBJS，LIBS
+
+
+

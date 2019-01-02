@@ -20,6 +20,7 @@ check_time_come()
 }
 
 s_hour=$1
+no_build=$2
 if [ "x${s_hour}" = "x" ] ; then
   usage
   exit -1
@@ -54,9 +55,12 @@ echo "continue do jobs"
 cd /home/allen_zhang/project/
 mkdir -p ${path}
 cd ${path}
-repo init -u admin@10.118.81.197:manifest --no-repo-verify
-repo sync -f
-repo start master --all
+repo init -u admin@10.118.81.197:manifest --no-repo-verify;repo sync -f;repo start master --all
+
+if [ "x${no_build}" == "xno_build" ];then
+	exit 0;
+fi
+
 cd ${path}/aldk
 ln -s configs/test/buffalo/WG9115MAC44-J6/default.mk default.mk
 make V=99
