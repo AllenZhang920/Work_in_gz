@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Eps_Main_Menu</class>
+ <widget class="QWidget" name="Eps_Main_Menu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>480</height>
+    </rect>
+   </property>
+   <widget class="QLabel" name="title">
+    <property name="geometry">
+     <rect>
+      <x>274</x>
+      <y>0</y>
+      <width>250</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>EPS主菜单</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Sys_Update_Data">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>310</y>
+      <width>200</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>数据下载</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Sys_Parame_Set">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>90</y>
+      <width>200</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>参数设置</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Sys_history_Data">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>200</y>
+      <width>200</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>历史查询 </string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Sys_Run_Information">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>90</y>
+      <width>200</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>运行信息</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Sys_Information">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>200</y>
+      <width>200</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>系统信息</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Sys_Battery_Data">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>310</y>
+      <width>200</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>电池信息</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>Sys_Run_Information</tabstop>
+  <tabstop>Sys_Parame_Set</tabstop>
+  <tabstop>Sys_Information</tabstop>
+  <tabstop>Sys_history_Data</tabstop>
+  <tabstop>Sys_Battery_Data</tabstop>
+  <tabstop>Sys_Update_Data</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

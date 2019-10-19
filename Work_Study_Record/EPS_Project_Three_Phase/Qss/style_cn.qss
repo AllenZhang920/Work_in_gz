@@ -1,0 +1,455 @@
+/*Button的设置*/
+
+QPushButton#styleButton{
+color: rgb(255, 255, 255);
+border-image: url(:/images/Eps_button_normal.png);
+padding: 6px;
+border-style: outset;
+border-color: beige;
+}
+QPushButton::focus#styleButton{
+border-image: url(:/images/Eps_button_dis.png);
+}
+QPushButton::pressed#styleButton{
+border-image: url(:/images/Eps_button_Pressed.png);
+}
+QPushButton:disabled#styleButton{
+border-image: url(:/images/Eps_button_disabled.png);
+
+}
+
+
+
+QPushButton#mButton{
+color: rgb(255, 255, 255);
+border-image: url(:/images/Eps_button_normal.png);
+border-style: outset;
+border-color: beige;
+}
+QPushButton::focus#mButton{
+border-image: url(:/images/Eps_button_dis.png);
+}
+QPushButton::pressed#mButton{
+border-image: url(:/images/Eps_button_Pressed.png);
+}
+QPushButton:disabled#mButton{
+border-image: url(:/images/Eps_button_disabled.png);
+
+}
+
+
+
+/*background-color: rgb(96, 96,96);*/
+
+
+QWidget#Mianwidget{
+/*border-image: url(:/images/main_Background_image.png);*/
+border-image: url(:/images/Background_image.png);
+
+height:480px;
+width:800px;
+}
+
+
+ QWidget#widget{
+ border-image: url(:/images/Background_image.png);
+ height:480px;
+ width:800px;
+ }
+
+QPushButton#btn_03{
+padding:300px;
+border-image: url(:/images/home.png);
+}
+QPushButton::focus#btn_03{
+border-image: url(:/images/home_dis.png);
+}
+QPushButton::pressed#btn_03{
+border-image: url(:/images/home_f.png);
+}
+QPushButton:disabled#btn_03{
+border-image: url(:/images/home_dis.png);
+}
+
+
+QPushButton#btn_05{
+padding:300px;
+border-image: url(:/images/back.png);
+}
+
+QPushButton::focus#btn_05{
+border-image: url(:/images/back_dis.png);
+}
+QPushButton::pressed#btn_05{
+border-image: url(:/images/back_f.png);
+}
+QPushButton:disabled#btn_05{
+border-image: url(:/images/back_dis.png);
+}
+/*
+QPushButton#pushButton_homepage{
+padding:300px;
+border-image: url(:/images/pghome.png);
+}
+QPushButton::pressed#pushButton_homepage{
+border-image: url(:/images/pghome_f.png);
+}
+QPushButton::focus#pushButton_homepage,
+QPushButton:disabled#pushButton_homepage{
+border-image: url(:/images/pghome_dis.png);
+}
+QPushButton#pushButton_uppage{
+padding:300px;
+border-image: url(:/images/pgup.png);
+}
+QPushButton::pressed#pushButton_uppage{
+border-image: url(:/images/pgup_f.png);
+}
+QPushButton::focus#pushButton_uppage,
+QPushButton:disabled#pushButton_uppage{
+border-image: url(:/images/pgup_dis.png);
+}
+QPushButton#pushButton_nextpage{
+padding:300px;
+border-image: url(:/images/pgdn.png);
+}
+QPushButton::pressed#pushButton_nextpage{
+border-image: url(:/images/pgdn_f.png);
+}
+QPushButton::focus#pushButton_nextpage,
+QPushButton:disabled#pushButton_nextpage{
+border-image: url(:/images/pgdn_dis.png);
+}
+QPushButton#pushButton_endpage{
+padding:300px;
+border-image: url(:/images/pgend.png);
+}
+QPushButton::pressed#pushButton_endpage{
+border-image: url(:/images/pgend_f.png);
+}
+QPushButton::focus#pushButton_endpage,
+QPushButton:disabled#pushButton_endpage{
+border-image: url(:/images/pgend_dis.png);
+}
+*/
+QPushButton#historypushButton{/*删除*/
+padding:300px;
+border-image: url(:/images/pgdel.png);
+}
+QPushButton::pressed#historypushButton{
+border-image: url(:/images/pgdel_f.png);
+}
+QPushButton::focus#historypushButton,
+QPushButton:disabled#historypushButton{
+border-image: url(:/images/pgdel_dis.png);
+}
+
+QPushButton#calc{
+color: rgb(255, 255, 255);
+font: 14pt;
+background-color: rgb(12, 148, 214);
+border-style: outset;
+border-width: 2px;
+border-radius: 6px;
+border-color: rgb(22, 79, 61);
+padding: 6px;
+}
+QPushButton::pressed#calc{
+background-color: rgb(103, 178,215);
+}
+QPushButton#calcdel{
+color: rgb(255, 255, 255);
+font: 14pt;
+background-color: rgb(251, 169,35);
+border-style: outset;
+border-width: 2px;
+border-radius: 6px;
+border-color: rgb(22, 79, 61);
+padding: 6px;
+}
+QPushButton::pressed#calcdel{
+background-color: rgb(242, 199, 93);
+}
+QPushButton:!enabled#calcdel{
+background-color: rgb(160, 180,190);
+border-image: url(:/images/menuno.png);
+}
+QPushButton#calcc{
+color: rgb(255, 255, 255);
+font: 14pt;
+background-color: rgb(230, 136,150);
+border-style: outset;
+border-width: 2px;
+border-radius: 6px;
+border-color: rgb(22, 79, 61);
+padding: 6px;
+}
+QPushButton::pressed#calcc{
+background-color: rgb(240, 189,197);
+
+}
+QPushButton:!enabled#calcc{
+background-color: rgb(160, 180,190);
+}
+QPushButton#calcok{
+color: rgb(255, 255, 255);
+font: 14pt;
+background-color: rgb(122, 185,38);
+border-style: outset;
+border-width: 2px;
+border-radius: 6px;
+border-color: rgb(22, 79, 61);
+padding: 6px;
+}
+QPushButton::pressed#calcok{
+background-color: rgb(177, 215,126);
+}
+QFrame#charging {
+opacity:.50;
+background-color: rgb(136, 206, 254);
+border-style: ridge;
+border-width: 1px;
+border-radius: 10px;
+border-color: rgb(22, 79, 61);
+font: bold 14px;
+padding: 6px;
+background-color:transparent
+}
+
+QFrame#charging_2 {
+opacity:.50;
+background-color: rgb(136, 206, 254);
+border-style: ridge;
+border-width: 1px;
+border-color: rgb(22, 79, 61);
+font: bold 14px;
+}
+
+
+QTabWidget{
+background-color:transparent
+}
+
+QTabWidget::tab-bar{
+ alignment: center;
+}
+
+QTabBar::tab{
+width:180px;
+height:40px;
+color: rgb(255, 255, 255);
+font: 14pt;
+border-image: url(:/images/Eps_button_normal.png);
+border-style: solid;
+border-width: 1px;
+border-radius: 6px;
+border-color: beige;
+/*padding: 6px;*/
+}
+
+QTabBar::tab:!selected {
+border-image: url(:/images/Eps_button_normal.png);
+
+}
+QTabBar::tab:!enabled {
+border-image: url(:/images/Eps_button_normal.png);
+
+}
+QTabBar::tab:focus {
+border-image: url(:/images/Eps_button_normal.png);
+
+}
+QTabBar::tab:selected {
+border-image: url(:/images/Eps_button_normal.png);
+
+}
+
+
+
+
+QGroupBox#groupBox_01 {
+background-color: rgb(75, 190, 155);
+border-style: ridge;
+border-width: 1px;
+border-radius: 10px;
+border-color: rgb(22, 79, 61);
+font: bold 20px;
+padding: 6px;
+}
+QTableWidget#eventreco{
+background-color: rgb(75, 190, 155);
+
+border-width: 1px;
+border-radius: 1px;
+border-color: rgb(22, 79, 61);
+font:15px;
+padding: 2px;
+}
+
+QHeaderView{
+border-width: 1px;
+border-radius: 1px;
+border-color: rgb(22, 79, 61);
+font: bold 16px;
+padding: 2px;
+}
+
+QMessageBox QLabel{
+color: rgb(0, 0, 0);
+
+}
+
+QMessageBox{
+   color: rgb(255, 246, 190);
+   font: 14pt;
+   border-color: rgb(75, 190, 155);
+   }
+
+QMessageBox QPushButton{
+color: rgb(255, 255, 255);
+font: 14pt;
+background-color: rgb(12, 148, 214);
+}
+
+QMessageBox QPushButton::pressed{
+background-color: rgb(130, 200,234);
+}
+
+
+QLineEdit {
+border: 1px solid #32435E;
+border-radius: 8px;    /*控件边框的弧度，数值越大，则弯曲得越厉害*/
+selection-background-color: #0A246A;
+}
+
+QLineEdit[echoMode="3"]{
+lineedit-password-character: 9679;
+}
+
+QLineEdit:!enabled{
+background-color: rgb(165, 165, 165);
+}
+
+/*添加EPS信息页样式*/
+QTabWidget#maininfo QLabel{
+color:rgb(0,0,0);
+}
+QTabWidget::pane{
+background-color: transparent  ;/*rgb(75, 190, 155);*/
+border-width: 1px;
+border-radius: 12px;
+padding: 2px;
+border-width: 2px;
+border-color: rgb(88,100,153);
+border-style: ridge;
+}
+
+QTabWidget QTabBar::tab{
+border-bottom-color: #C2C7CB;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+padding: 0px;
+color:rgb(0,0,0);
+width:130px;
+margin-left: 20px; margin-right: 0px; /*tab间隙*/
+height:25px;
+border-image: url(:/images/Eps_button_normal.png);
+
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  padding: 6px;
+
+}
+QTabWidget QTabBar::tab:first{
+margin-left: 3px;
+}
+QTabWidget QTabBar::tab:hover,
+QTabWidget QTabBar::tab:pressed,
+QTabWidget QTabBar::tab:selected{
+border-image: url(://images/Eps_button_Pressed.png);
+}
+
+
+
+QTabWidget#tabWidget_1 QTabBar::tab{
+border-bottom-color: #C2C7CB;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+padding: 0px;
+color:rgb(0,0,0);
+width:123px;
+margin-left: 5px; margin-right: 0px; /*tab间隙*/
+height:25px;
+border-image: url(:/images/Eps_button_normal.png);
+
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  padding: 6px;
+
+}
+QTabWidget#tabWidget_1 QTabBar::tab:first{
+margin-left: 2px;
+}
+QTabWidget#tabWidget_1  QTabBar::tab:hover,
+QTabWidget#tabWidget_1  QTabBar::tab:pressed,
+QTabWidget#tabWidget_1  QTabBar::tab:selected{
+border-image: url(://images/Eps_button_Pressed.png);
+}
+/*QLabel样式*/
+
+QLabel#status{
+color: rgb(0, 0, 0);
+font: 14pt;
+}
+
+
+QLabel{
+color:rgb(0,0,0);
+}
+
+QLabel#fault{
+color: red;
+}
+
+
+QTabWidget#maininfo QLabel#lb_company{
+color:rgb(0,0,0);
+background-color: transparent ;
+border-radius: 2px;
+padding-left:22px;
+border-width: 2px;
+border-color: rgb(88,100,153);
+border-style: ridge;
+}
+QLabel#title{
+color:rgb(0,0,0);
+}
+QGroupBox{
+color:rgb(0,0,0);
+background-color: transparent ;
+border-radius: 12px;
+border-width: 2px;
+border-color: rgb(88,100,153);
+border-style: ridge;
+}
+QGroupBox::title{
+border-style: ridge;
+subcontrol-origin: margin;
+margin-left: 10px;
+margin-right: 10px;
+margin-bottom: 10px;
+subcontrol-position: top ;#Month_Detection, #Year_Detection,
+#pushButton_application, #pushButton_exportfile, #pushButton_exportfile_input, #pushButton_exportfile_output,
+#pushButton, #pushButton_2, #pushButton_3,
+#but_log, #but_menu, #but_silence, #but_user, #but_defend, #but_debug{
+
+}
+
+QListWidget,QTableWidget,
+QGroupBox QGroupBox{
+color:rgb(0,0,0);
+background-color: transparent; //rgb(35,141,175);
+border-style: ridge;
+}

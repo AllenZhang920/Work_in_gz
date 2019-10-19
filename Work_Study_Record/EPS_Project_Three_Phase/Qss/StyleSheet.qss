@@ -1,0 +1,113 @@
+
+*{
+  color:black;
+}
+
+QWidget#widget{
+
+ border-image: url(:/new/images/Pagingbackground.png);
+
+}
+
+
+MypushButton{
+ border-image: url(:/new/images/directionnormal.png);
+ color: rgb(0, 0, 0);
+}
+
+MypushButton:focus{
+ border-image: url(:/new/images/directionfocus.png);
+ color: rgb(0, 0, 0);
+}
+
+MypushButton:pressed{
+ border-image: url(:/new/images/directionpressed.png);
+ color: rgb(0, 0, 0);
+}
+
+
+QPushButton#returnpushButton{
+  border-image: url(:/new/images/backnormal.png);
+ }
+QPushButton#returnpushButton:pressed{
+  border-image: url(:/new/images/backpressed.png);
+}
+
+QPushButton#mainpushButton{
+  border-image: url(:/new/images/mainnormal.png);
+}
+
+QPushButton#mainpushButton:pressed{
+  border-image: url(:/new/images/mainpressed.png);
+}
+
+
+QPushButton#AlarmLevelpushButton{
+  border-image: url(:/new/images/alarmvnormal.png);
+}
+QPushButton#AlarmLevelpushButton:focus{
+  border-image: url(:/new/images/alarmvhover.png);
+}
+QPushButton#AlarmLevelpushButton:pressed{
+  border-image: url(:/new/images/alarmvpressed.png);
+}
+
+
+QPushButton#BatterysetpushButton{
+  border-image: url(:/new/images/managementnormal.png);
+}
+QPushButton#BatterysetpushButton:focus{
+  border-image: url(:/new/images/managementhover.png);
+}
+QPushButton#BatterysetpushButton:pressed{
+  border-image: url(:/new/images/managementpressed.png);
+}
+
+
+QPushButton#mainmeupushButton{
+  border-image: url(:/new/images/settingnormal.png);
+}
+
+QPushButton#mainmeupushButton:focus{
+border-image: url(:/new/images/settinghover.png);
+}
+
+QPushButton#mainmeupushButton:pressed{
+  border-image: url(:/new/images/settingpressed.png);
+}
+
+QComboBox{
+  min-height: 28px; min-width: 40px;
+  background-color: rgb(0, 170,0);
+}
+
+QComboBox QAbstractItemView::item {
+  min-height: 35px; min-width: 60px;
+  background-color: rgb(0, 170,0);
+
+}
+
+/*--------------------------------------------------------------以下为QLineEdit的设置----------------------------------------------------------*/
+
+QLineEdit,QTextEdit {
+  border: 1px solid #32435E;
+  border-radius: 8px;				/*控件边框的弧度，数值越大，则弯曲得越厉害*/
+  /* padding: 0 8px; */
+
+  selection-background-color: #0A246A;
+
+}
+
+QLineEdit[echoMode="3"] {
+   lineedit-password-character: 9679;
+}
+
+QLineEdit:!enabled{
+  background-color: rgb(165, 165, 165);
+}
+
+
+
+
+
+

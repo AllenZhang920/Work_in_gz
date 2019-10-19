@@ -1,0 +1,44 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/settingnormal.png</file>
+        <file>Qm/qt_zh_CN.qm</file>
+        <file>images/Eps_button_Pressed.png</file>
+        <file>images/Eps_button_normal.png</file>
+        <file>images/EPS.png</file>
+        <file>images/Background_image.png</file>
+        <file>images/pgdn_f.png</file>
+        <file>images/pgend.png</file>
+        <file>images/pgend_f.png</file>
+        <file>images/pghome.png</file>
+        <file>images/pghome_f.png</file>
+        <file>images/pgup.png</file>
+        <file>images/pgup_f.png</file>
+        <file>images/back.png</file>
+        <file>images/back_f.png</file>
+        <file>images/back_dis.png</file>
+        <file>images/pgdn_dis.png</file>
+        <file>images/pgend_dis.png</file>
+        <file>images/pghome_dis.png</file>
+        <file>images/pgup_dis.png</file>
+        <file>images/pgdel.png</file>
+        <file>images/pgdel_dis.png</file>
+        <file>images/pgdel_f.png</file>
+        <file>Qm/EPS_Project_zh.qm</file>
+        <file>images/home_f.png</file>
+        <file>images/home_dis.png</file>
+        <file>images/home.png</file>
+        <file>images/Eps_button_dis.png</file>
+        <file>Qss/style_cn.qss</file>
+        <file>images/pgdn.png</file>
+        <file>images/44.gif</file>
+        <file>images/33.gif</file>
+        <file>images/22.gif</file>
+        <file>images/11.gif</file>
+        <file>images/4_03.png</file>
+        <file>images/3_03.png</file>
+        <file>images/2_03.png</file>
+        <file>images/1_03.png</file>
+        <file>images/Eps_button_disabled.png</file>
+        <file>images/infor.png</file>
+    </qresource>
+</RCC>
